@@ -65,6 +65,12 @@ namespace __parallel_for {
   };
 
 
+  template <class F>
+  struct Tuning<sm60, F>
+  {
+    typedef PtxPolicy<128, 1> type;
+  };
+
   template <class F,
             class Size>
   struct ParallelForAgent
